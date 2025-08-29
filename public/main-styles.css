@@ -1,0 +1,44 @@
+body {
+  background-color: #d5020e;
+  color: white;
+}
+
+#welcome {
+  position: absolute;
+  top: calc(50% - 40px);
+  left: calc(50% - 25px);
+  transform: translate(-50%, -50%);
+}
+
+#welcome-title,
+#welcome-tag {
+  text-align: center;
+}
+
+#welcome-title {
+  font-family: "Archivo Black", sans-serif;
+}
+
+#welcome-tag {
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  margin-top: -20px;
+}
+
+#sub-button-wrap {
+  display: flex;
+  justify-self: center;
+  background-color: white;
+  max-width: 250px;
+  padding: 6px;
+}
+
+#game-access {
+  display: flex;
+  justify-self: center;
+  padding-top: 10px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  color: white;
+}

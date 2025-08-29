@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>hola chinchulín</title>
+    <link rel="stylesheet" href="./game-styles.css" />
+  </head>
+  <body>
+    <div id="overlay-wrap" class="overlay">
+      <div id="color-picker-wrap" class="overlay">
+        <input type="color" value="#FFFFFF" id="color-input" />
+      </div>
+      <div id="coordinates" class="overlay">
+        X:<span id="x-coordinate">0</span> Y:<span id="y-coordinate">0</span>
+      </div>
+      <div id="timer" class="overlay">0:00</div>
+    </div>
+    <main>
+      <canvas id="canvas" width="160" height="160"></canvas>
+    </main>
+    <script type="module" src="coordinates.js"></script>
+    <script type="module" src="timer.js"></script>
+    <script type="module" src="main-game.js"></script>
+  </body>
+</html>

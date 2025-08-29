@@ -1,0 +1,29 @@
+{
+  "name": "pagina-canvas-video",
+  "version": "1.0.0",
+  "description": "An r/place clone for my own YouTube channel.",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/falsofacu/Pagina-Canvas-Video.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/falsofacu/Pagina-Canvas-Video/issues"
+  },
+  "homepage": "https://github.com/falsofacu/Pagina-Canvas-Video#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}

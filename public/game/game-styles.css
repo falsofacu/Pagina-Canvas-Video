@@ -1,0 +1,52 @@
+:root {
+  --overlay-bg-color: #222;
+  --overlay-text-color: #fff;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  /* TEMP */
+  background-color: #68499c;
+}
+
+.overlay {
+  position: fixed;
+}
+
+#color-picker-wrap {
+  top: 10px;
+  left: 10px;
+}
+
+#coordinates {
+  top: 10px;
+  left: calc(50% - 79px);
+  width: 150px;
+  height: 18px;
+  padding: 8px;
+  border-radius: 20px;
+  background-color: var(--overlay-bg-color);
+  color: var(--overlay-text-color);
+  text-align: center;
+}
+
+#timer {
+  top: 10px;
+  right: 10px;
+  width: 50px;
+  height: 18px;
+  padding: 7px;
+  border-radius: 20px;
+  background-color: var(--overlay-bg-color);
+  color: var(--overlay-text-color);
+  text-align: center;
+}
+
+#canvas {
+  position: absolute;
+  image-rendering: pixelated;
+  top: calc(50% - 80px);
+  left: calc(50% - 80px);
+  transform: scale(200%);
+}
