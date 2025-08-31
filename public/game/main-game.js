@@ -41,7 +41,6 @@ colorInput.addEventListener("change", (e) => {
   ctx.fillStyle = pickedColor;
 });
 
-// TODO: Change canvas.json on paint
 // Paint a pixel on click
 canvas.addEventListener("click", (e) => {
   const rect = canvas.getBoundingClientRect();
@@ -58,10 +57,11 @@ canvas.addEventListener("click", (e) => {
     ctx.fillRect(posX, posY, 1, 1);
     console.log("x: " + posX + " y: " + posY + " color: " + pickedColor);
   } else {
-    console.log("Wait for cooldown");
+    alert("Wait for cooldown");
   }
 });
 
+// Paint pixel on server
 function updatePixelOnServer(x, y, color) {
   fetch("/canvas", {
     method: "POST",
@@ -74,3 +74,20 @@ function updatePixelOnServer(x, y, color) {
     .then((data) => console.log("Server response:", data))
     .catch((err) => console.error("Error updating pixel on server:", err));
 }
+
+// Read canvas.json
+function fetchCanvasFromServer() {
+  fetch("/canvas")
+    .then((response) => response.json())
+    .then((data) => {
+      paintCanvasFromArr(data.canvas);
+    })
+    .catch((err) => {
+      console.error("Error fetching canvas from server: " + err);
+    });
+}
+
+// Refresh canvas every 5 seconds to get updates from other users
+const refreshCanvasInterval = setInterval(() => {
+  fetchCanvasFromServer();
+}, 5000);
