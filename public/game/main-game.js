@@ -4,6 +4,7 @@ import { getLastMouseCoords } from "./coordinates.js";
 
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
+const defaultFillStyle = document.getElementById("color-input").value;
 
 // Load canvas.json
 let loadedColorGrid = [];
@@ -26,6 +27,9 @@ function paintCanvasFromArr(colorGrid) {
       ctx.fillRect(j, i, 1, 1);
     }
   }
+  // Reset fillStyle to default
+  // Fixes a bug where the first painted pixel is the same color as the last pixel of canvas.json
+  ctx.fillStyle = defaultFillStyle;
 }
 
 // Get picked color
@@ -50,9 +54,9 @@ canvas.addEventListener("click", (e) => {
   if (!isCooldownActive()) {
     resetTimer();
     // Paint pixel
-    ctx.fillRect(posX, posY, 1, 1);
     updatePixelOnServer(posX, posY, pickedColor);
-    console.log("x: " + posX + "y: " + posY);
+    ctx.fillRect(posX, posY, 1, 1);
+    console.log("x: " + posX + " y: " + posY + " color: " + pickedColor);
   } else {
     console.log("Wait for cooldown");
   }
