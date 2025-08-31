@@ -54,6 +54,7 @@ canvas.addEventListener("click", (e) => {
     resetTimer();
     // Paint pixel
     updatePixelOnServer(posX, posY, pickedColor);
+    ctx.fillStyle = pickedColor;
     ctx.fillRect(posX, posY, 1, 1);
     console.log("x: " + posX + " y: " + posY + " color: " + pickedColor);
   } else {
@@ -71,7 +72,6 @@ function updatePixelOnServer(x, y, color) {
     body: JSON.stringify({ x, y, color }),
   })
     .then((response) => response.json())
-    .then((data) => console.log("Server response:", data))
     .catch((err) => console.error("Error updating pixel on server:", err));
 }
 
