@@ -1,12 +1,32 @@
 import { isCooldownActive } from "./timer.js";
 import { resetTimer } from "./timer.js";
+import { getLastMouseCoords } from "./coordinates.js";
 
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 
-//Make canvas white
-ctx.fillStyle = "#FFFFFF";
-ctx.fillRect(0, 0, 160, 160);
+//Load canvas.json
+let loadedColorGrid = [];
+
+fetch("./canvas.json")
+  .then((response) => response.json())
+  .then((data) => {
+    loadedColorGrid = data;
+    paintCanvasFromArr(loadedColorGrid);
+  })
+  .catch((err) => {
+    console.log("Error loading canvas.json: " + err);
+  });
+
+//Load default canvas
+function paintCanvasFromArr(colorGrid) {
+  for (let i = 0; i <= 159; i++) {
+    for (let j = 0; j <= 159; j++) {
+      ctx.fillStyle = colorGrid[i][j];
+      ctx.fillRect(j, i, 1, 1);
+    }
+  }
+}
 
 //Get picked color
 const colorInput = document.getElementById("color-input");
@@ -17,14 +37,16 @@ colorInput.addEventListener("change", (e) => {
   ctx.fillStyle = pickedColor;
 });
 
-//Paint
+//TODO: Change canvas.json on paint
+//Paint a pixel on click
 canvas.addEventListener("click", (e) => {
   const rect = canvas.getBoundingClientRect();
   const scaleX = canvas.width / rect.width;
   const scaleY = canvas.height / rect.height;
 
-  const posX = Math.floor((e.clientX - rect.left) * scaleX);
-  const posY = Math.floor((e.clientY - rect.top) * scaleY);
+  // const posX = 0;
+  // const posY = 0;
+  const [posX, posY] = getLastMouseCoords();
 
   // Check if cooldown is active before painting
   if (!isCooldownActive()) {

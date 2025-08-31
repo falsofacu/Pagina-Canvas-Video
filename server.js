@@ -8,8 +8,6 @@ const PORT = 3000;
 app.use(express.json());
 app.use(express.static("public"));
 
-console.log("wwwww");
-
 // Obtener estado del canvas
 app.get("/canvas", (req, res) => {
   const filePath = path.join(".", "canvas.json");

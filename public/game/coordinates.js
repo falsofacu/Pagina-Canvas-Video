@@ -19,7 +19,7 @@ canvas.addEventListener("mousemove", (e) => {
   yCoordElem.innerHTML = posY;
 });
 
-//Just in case
+//Get last mouse coordinates on canvas
 export function getLastMouseCoords() {
   return [posX, posY];
 }

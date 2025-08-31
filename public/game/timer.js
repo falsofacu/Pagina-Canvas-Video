@@ -36,7 +36,7 @@ function updateTimer() {
   timerElem.innerHTML = timeLeft > 0 ? msToMinSec(timeLeft) : "0:00";
 }
 
-//Get TimeLeft
+//Get time left
 function getTimeLeft() {
   const storedDate = Number(localStorage.getItem("timer"));
   return timeout - (Date.now() - storedDate);
