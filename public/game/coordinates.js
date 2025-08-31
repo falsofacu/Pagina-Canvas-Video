@@ -14,12 +14,12 @@ canvas.addEventListener("mousemove", (e) => {
   posX = Math.floor((e.clientX - rect.left) * scaleX);
   posY = Math.floor((e.clientY - rect.top) * scaleY);
 
-  //Update HTML
+  // Update HTML
   xCoordElem.innerHTML = posX;
   yCoordElem.innerHTML = posY;
 });
 
-//Get last mouse coordinates on canvas
+// Get last mouse coordinates on canvas
 export function getLastMouseCoords() {
   return [posX, posY];
 }
