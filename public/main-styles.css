@@ -8,6 +8,8 @@ body {
   top: calc(50% - 40px);
   left: calc(50% - 25px);
   transform: translate(-50%, -50%);
+  text-align: center;
+  margin: auto;
 }
 
 #welcome-title,
@@ -26,19 +28,18 @@ body {
 }
 
 #sub-button-wrap {
-  display: flex;
   justify-self: center;
+  margin: auto auto 12px auto;
   background-color: white;
   max-width: 250px;
   padding: 6px;
+  border-radius: 5px;
 }
 
 #game-access {
-  display: flex;
-  justify-self: center;
-  padding-top: 10px;
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
   font-size: 14px;
   color: white;
+  text-align: center;
 }
