@@ -37,7 +37,7 @@ export function updateTimer() {
 }
 
 // Get time left
-function getTimeLeft() {
+export function getTimeLeft() {
   const storedDate = Number(localStorage.getItem("timer"));
   return timeout - (Date.now() - storedDate);
 }
