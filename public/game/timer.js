@@ -1,5 +1,5 @@
 const timerElem = document.getElementById("timer");
-const timeout = 10000; // 10 min
+const timeout = 61000; // 1 min + 1 sec
 
 // Create timer in localStorage if it doesn't exist
 if (localStorage.getItem("timer") === null) {
@@ -28,7 +28,7 @@ if (timeDifference >= timeout) {
 // Update timer every second
 const timerInterval = setInterval(() => updateTimer(), 1000);
 
-function updateTimer() {
+export function updateTimer() {
   const currentDate = Date.now();
   storedDate = localStorage.getItem("timer");
   timeDifference = currentDate - storedDate;
