@@ -1,6 +1,7 @@
 import { isCooldownActive } from "./timer.js";
 import { resetTimer } from "./timer.js";
 import { updateTimer } from "./timer.js";
+// import { getTimeLeft } from "./timer.js";
 import { getLastMouseCoords } from "./coordinates.js";
 
 const canvas = document.getElementById("canvas");
@@ -92,7 +93,8 @@ canvas.addEventListener("pointerup", (e) => {
       ctx.fillRect(posX, posY, 1, 1);
       console.log("x: " + posX + " y: " + posY + " color: " + pickedColor);
     } else {
-      alert("Wait for cooldown");
+      alert("Esperá loquito, falta un cacho");
+      // Was going to use getTimeLeft() to show time left in alert, but I want to keep resource usage as low as possible
     }
   }
 });
