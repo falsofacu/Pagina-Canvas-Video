@@ -8,17 +8,193 @@
   </head>
   <body>
     <div id="overlay-wrap" class="overlay">
+      <div id="upper-overlay" class="overlay">
+        <div id="coordinates" class="overlay">
+          X:<span id="x-coordinate">0</span> Y:<span id="y-coordinate">0</span>
+        </div>
+        <div id="timer" class="overlay">0:00</div>
+      </div>
       <div id="color-picker-wrap" class="overlay">
-        <input type="color" value="#FFFFFF" id="color-input" />
+        <div class="color-group">
+          <div
+            class="color-btn"
+            style="background-color: #ff0000"
+            data-color="#FF0000"
+          ></div>
+          <div
+            class="color-btn"
+            style="background-color: #ff5555"
+            data-color="#FF5555"
+          ></div>
+          <div
+            class="color-btn"
+            style="background-color: #ffaaaa"
+            data-color="#FFAAAA"
+          ></div>
+        </div>
+        <div class="color-group">
+          <div
+            class="color-btn"
+            style="background-color: #ff8000"
+            data-color="#FF8000"
+          ></div>
+          <div
+            class="color-btn"
+            style="background-color: #ffa040"
+            data-color="#FFA040"
+          ></div>
+          <div
+            class="color-btn"
+            style="background-color: #ffb870"
+            data-color="#FFB870"
+          ></div>
+        </div>
+        <div class="color-group">
+          <div
+            class="color-btn"
+            style="background-color: #ffff00"
+            data-color="#FFFF00"
+          ></div>
+          <div
+            class="color-btn"
+            style="background-color: #ffff55"
+            data-color="#FFFF55"
+          ></div>
+          <div
+            class="color-btn"
+            style="background-color: #ffffaa"
+            data-color="#FFFFAA"
+          ></div>
+        </div>
+        <div class="color-group">
+          <div
+            class="color-btn"
+            style="background-color: #00ff00"
+            data-color="#00FF00"
+          ></div>
+          <div
+            class="color-btn"
+            style="background-color: #66ff66"
+            data-color="#55FF55"
+          ></div>
+          <div
+            class="color-btn"
+            style="background-color: #aaffaa"
+            data-color="#AAFFAA"
+          ></div>
+        </div>
+        <div class="color-group">
+          <div
+            class="color-btn"
+            style="background-color: #00ffff"
+            data-color="#00FFFF"
+          ></div>
+          <div
+            class="color-btn"
+            style="background-color: #77ffff"
+            data-color="#55FFFF"
+          ></div>
+          <div
+            class="color-btn"
+            style="background-color: #aaffff"
+            data-color="#AAFFFF"
+          ></div>
+        </div>
+        <div class="color-group">
+          <div
+            class="color-btn"
+            style="background-color: #0000ff"
+            data-color="#0000FF"
+          ></div>
+          <div
+            class="color-btn"
+            style="background-color: #5555ff"
+            data-color="#5555ff"
+          ></div>
+          <div
+            class="color-btn"
+            style="background-color: #aaaaff"
+            data-color="#AAAAFF"
+          ></div>
+        </div>
+        <div class="color-group">
+          <div
+            class="color-btn"
+            style="background-color: #ff00ff"
+            data-color="#FF00FF"
+          ></div>
+          <div
+            class="color-btn"
+            style="background-color: #ff55ff"
+            data-color="#FF55FF"
+          ></div>
+          <div
+            class="color-btn"
+            style="background-color: #ffaaff"
+            data-color="#FFAAFF"
+          ></div>
+        </div>
+        <div class="color-group">
+          <div
+            class="color-btn"
+            style="background-color: #7f00ff"
+            data-color="#800080"
+          ></div>
+          <div
+            class="color-btn"
+            style="background-color: #9f40ff"
+            data-color="#A040A0"
+          ></div>
+          <div
+            class="color-btn"
+            style="background-color: #b770ff"
+            data-color="#B870B8"
+          ></div>
+        </div>
+        <div class="color-group">
+          <div
+            class="color-btn"
+            style="background-color: #000000"
+            data-color="#000000"
+          ></div>
+          <div
+            class="color-btn"
+            style="background-color: #555555"
+            data-color="#555555"
+          ></div>
+          <div
+            class="color-btn"
+            style="background-color: #999999"
+            data-color="#AAAAAA"
+          ></div>
+        </div>
+        <div class="color-group">
+          <div
+            class="color-btn"
+            style="background-color: #bbbbbb"
+            data-color="#BBBBBB"
+          ></div>
+          <div
+            class="color-btn"
+            style="background-color: #dddddd"
+            data-color="#DDDDDD"
+          ></div>
+          <div
+            class="color-btn"
+            style="background-color: #ffffff"
+            data-color="#FFFFFF"
+          ></div>
+        </div>
+        <input id="color-input" type="color" value="#FFFFFF" />
       </div>
-      <div id="coordinates" class="overlay">
-        X:<span id="x-coordinate">0</span> Y:<span id="y-coordinate">0</span>
-      </div>
-      <div id="timer" class="overlay">0:00</div>
     </div>
-    <main>
+    <div id="game-wrap">
       <canvas id="canvas" width="160" height="160"></canvas>
-    </main>
+    </div>
+    <script
+      type="module"
+      src="https://unpkg.com/@panzoom/panzoom@4.6.0/dist/panzoom.min.js"
+    ></script>
     <script type="module" src="coordinates.js"></script>
     <script type="module" src="timer.js"></script>
     <script type="module" src="main-game.js"></script>
