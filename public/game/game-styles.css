@@ -32,12 +32,35 @@ body {
 }
 
 #upper-overlay {
+  box-sizing: border-box;
   width: 100%;
   display: flex;
   justify-content: center;
   gap: 10px;
   padding: 10px;
-  box-sizing: border-box;
+  font-size: 22px;
+}
+
+#coordinates {
+  position: relative;
+  width: 150px;
+  height: 40px;
+  padding: 8px;
+  border-radius: 20px;
+  background-color: var(--overlay-bg-color);
+  color: var(--overlay-text-color);
+  text-align: center;
+}
+
+#timer {
+  position: relative;
+  width: 70px;
+  height: 40px;
+  padding: 7px;
+  border-radius: 20px;
+  background-color: var(--overlay-bg-color);
+  color: var(--overlay-text-color);
+  text-align: center;
 }
 
 #color-picker-wrap {
@@ -48,12 +71,12 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 40px;
+  height: 48px;
   width: 90%;
   max-width: 800px;
   padding: 0 10px;
   margin: 0 10px;
-  border-radius: 20px;
+  border-radius: 22px;
   background-color: var(--overlay-bg-color);
 }
 
@@ -61,8 +84,8 @@ body {
   display: flex;
   gap: 0;
   margin: 10px 4px;
-  width: 75px;
-  height: 20px;
+  width: 82px;
+  height: 24px;
   border-radius: 11px;
   overflow: hidden;
   border: 2px solid #fff;
@@ -107,28 +130,6 @@ body {
     rgba(251, 7, 217, 1) 90%,
     rgba(255, 0, 0, 1) 100%
   );
-}
-
-#coordinates {
-  position: relative;
-  width: 150px;
-  height: 30px;
-  padding: 8px;
-  border-radius: 20px;
-  background-color: var(--overlay-bg-color);
-  color: var(--overlay-text-color);
-  text-align: center;
-}
-
-#timer {
-  position: relative;
-  width: 50px;
-  height: 30px;
-  padding: 7px;
-  border-radius: 20px;
-  background-color: var(--overlay-bg-color);
-  color: var(--overlay-text-color);
-  text-align: center;
 }
 
 #canvas {
