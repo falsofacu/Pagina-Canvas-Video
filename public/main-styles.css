@@ -5,8 +5,8 @@ body {
 
 #welcome {
   position: absolute;
-  top: calc(50% - 40px);
-  left: calc(50% - 25px);
+  top: calc(50%);
+  left: calc(50%);
   transform: translate(-50%, -50%);
   text-align: center;
   margin: auto;
