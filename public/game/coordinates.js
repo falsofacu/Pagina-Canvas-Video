@@ -6,6 +6,20 @@ const yCoordElem = document.getElementById("y-coordinate");
 let posX = 0;
 let posY = 0;
 
+// Fixes issue where coordinates are not instantiated on mobile
+canvas.addEventListener("click", (e) => {
+  const rect = canvas.getBoundingClientRect();
+  const scaleX = canvas.width / rect.width;
+  const scaleY = canvas.height / rect.height;
+
+  posX = Math.floor((e.clientX - rect.left) * scaleX);
+  posY = Math.floor((e.clientY - rect.top) * scaleY);
+
+  // Update HTML
+  xCoordElem.innerHTML = posX;
+  yCoordElem.innerHTML = posY;
+});
+
 canvas.addEventListener("mousemove", (e) => {
   const rect = canvas.getBoundingClientRect();
   const scaleX = canvas.width / rect.width;
