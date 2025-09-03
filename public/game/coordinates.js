@@ -7,7 +7,7 @@ let posX = 0;
 let posY = 0;
 
 // Fixes issue where coordinates are not instantiated on mobile
-canvas.addEventListener("click", (e) => {
+canvas.addEventListener("pointerup", (e) => {
   const rect = canvas.getBoundingClientRect();
   const scaleX = canvas.width / rect.width;
   const scaleY = canvas.height / rect.height;
