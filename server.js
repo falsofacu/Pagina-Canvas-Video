@@ -43,16 +43,16 @@ function saveIpTimes(ipTimes) {
 // Paint canvas with server-side cooldown
 app.post("/canvas", (req, res) => {
   const filePath = path.join(".", "public", "game", "canvas.json");
-  const ip = req.ip;
-  const ipTimes = loadIpTimes();
-  const currentTime = Date.now();
-  const cooldown = 60000; // 1 minute cooldown
+  // const ip = req.ip;
+  // const ipTimes = loadIpTimes();
+  // const currentTime = Date.now();
+  // const cooldown = 60000; // 1 minute cooldown
 
-  if (ipTimes[ip] && currentTime - ipTimes[ip] < cooldown) {
-    return res.status(429).json({
-      error: `Please wait before placing another pixel.`,
-    });
-  }
+  // if (ipTimes[ip] && currentTime - ipTimes[ip] < cooldown) {
+  //   return res.status(429).json({
+  //     error: `Please wait before placing another pixel.`,
+  //   });
+  // }
 
   try {
     // Load existing canvas state
@@ -65,8 +65,8 @@ app.post("/canvas", (req, res) => {
     fs.writeFileSync(filePath, JSON.stringify(loadedCanvas));
 
     //Save the time of the last pixel placement
-    ipTimes[ip] = currentTime;
-    saveIpTimes(ipTimes);
+    // ipTimes[ip] = currentTime;
+    // saveIpTimes(ipTimes);
 
     res.json({
       status: "ok",
