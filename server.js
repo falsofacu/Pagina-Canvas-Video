@@ -43,7 +43,7 @@ function saveIpTimes(ipTimes) {
 // Paint canvas with server-side cooldown
 app.post("/canvas", (req, res) => {
   const filePath = path.join(".", "public", "game", "canvas.json");
-  const ip = req.ip;
+  const ip = req.headers["x-forwarded-for"] || req.socket.remoteAddress;
   const ipTimes = loadIpTimes();
   const currentTime = Date.now();
   const cooldown = 60000; // 1 minute cooldown
