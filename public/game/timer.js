@@ -1,9 +1,10 @@
 const timerElem = document.getElementById("timer");
-const timeout = 61000; // 1 min + 1 sec
+const timeout = 60900; // 1 min + 0.9 sec
 
 // Create timer in localStorage if it doesn't exist
 if (localStorage.getItem("timer") === null) {
-  localStorage.setItem("timer", Date.now());
+  // Subtract timeout to allow painting immediately on first load
+  localStorage.setItem("timer", Date.now() - timeout);
 }
 
 // Calculate time difference and time left initially
