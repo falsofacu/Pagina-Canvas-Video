@@ -49,7 +49,7 @@ app.post("/canvas", (req, res) => {
   const ip = req.ip;
   const ipTimes = loadIpTimes();
   const currentTime = Date.now();
-  const cooldown = 60000; // 1 minute cooldown
+  const cooldown = 10000; // 10 seconds
 
   if (ipTimes[ip] && currentTime - ipTimes[ip] < cooldown) {
     return res.status(429).json({

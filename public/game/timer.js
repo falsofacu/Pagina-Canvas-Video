@@ -1,5 +1,5 @@
 const timerElem = document.getElementById("timer");
-const timeout = 60900; // 1 min + 0.9 sec
+const timeout = 10900; // 10.9 seconds
 
 // Create timer in localStorage if it doesn't exist
 if (localStorage.getItem("timer") === null) {
